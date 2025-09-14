@@ -33,7 +33,7 @@ All captured leads are stored in an Excel file (`leads.xlsx`) with relevant deta
 1. **Clone the repository**
    ```bash
    git clone https://github.com/SIDDHARTH000001/Sales-Page-Quick-Answer-Lead-Bot.git
-   cd finkart
+   cd Sales-Page-Quick-Answer-Lead-Bot
    ```
 
 2. **Install dependencies**
