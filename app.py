@@ -62,11 +62,11 @@ BOT_CONFIG = {
     },
     "page_content": {
         "/home": {
-            "title": "🏠 Welcome to FlipKraft",
+            "title": "🏠 Welcome to FinKraft",
             "content": """
 **Transform Your Business with Smart Automation**
 
-FlipKraft is your all-in-one platform for business automation and API integration. 
+FinKraft is your all-in-one platform for business automation and API integration. 
 Whether you're a startup or enterprise, we help streamline your workflows and boost productivity.
 
 🚀 **Key Benefits:**
@@ -76,7 +76,7 @@ Whether you're a startup or enterprise, we help streamline your workflows and bo
 • 500+ pre-built integrations
 • 24/7 expert support
 
-*Ready to see FlipKraft in action? Explore our features or check out our pricing plans!*
+*Ready to see FinKraft in action? Explore our features or check out our pricing plans!*
 """
         },
         "/pricing": {
@@ -193,17 +193,17 @@ Whether you're a startup or enterprise, we help streamline your workflows and bo
 """
         },
         "/support": {
-            "title": "📞 FlipKraft Customer Support",
+            "title": "📞 FinKraft Customer Support",
             "content": """
 **We're here to help you succeed**
 
 **Contact Information:**
-📧 Email: support@flipkraft.com
+📧 Email: support@FinKraft.com
 📱 Phone: +91-8000-123-456
 ⏰ Support Hours: Mon–Sat, 10 AM – 8 PM IST
 
 **Self-Service Resources:**
-🔍 Knowledge Base: https://flipkraft.com/help
+🔍 Knowledge Base: https://FinKraft.com/help
 💬 Live Chat: Available on the website
 🎥 Video Tutorials: Step-by-step guides
 📝 Community Forum: Connect with other users
