@@ -1,0 +1,162 @@
+[
+  {
+    "question": "Do you have SOC 2 compliance?",
+    "answer": "Yes, our platform is SOC 2 Type II certified, ensuring secure data handling and industry-standard compliance."
+  },
+  {
+    "question": "Where is customer data stored?",
+    "answer": "We offer data residency options in the US, EU, and India. You can choose the preferred region during onboarding."
+  },
+  {
+    "question": "Do you support SSO and 2FA?",
+    "answer": "Yes, we support SAML-based Single Sign-On (SSO) and provide two-factor authentication for all accounts."
+  },
+  {
+    "question": "What are the API usage limits?",
+    "answer": "The standard plan includes 100,000 API requests per month. Higher limits are available on enterprise plans."
+  },
+  {
+    "question": "Is there a free trial available?",
+    "answer": "Yes, we offer a 14-day free trial with full access to all features."
+  },
+  {
+    "question": "Do you have a return or cancellation policy?",
+    "answer": "Yes, you can cancel anytime. If canceled within 30 days of purchase, you’ll receive a full refund."
+  },
+  {
+    "question": "Can I integrate this with Slack and Microsoft Teams?",
+    "answer": "Yes, we provide native integrations with Slack, Microsoft Teams, and other collaboration tools."
+  },
+  {
+    "question": "Does your platform support role-based access control?",
+    "answer": "Yes, you can define granular user roles and permissions for admins, managers, and contributors."
+  },
+  {
+    "question": "What pricing plans are available?",
+    "answer": "We offer Starter, Growth, and Enterprise plans, starting at $49/month. Custom pricing is available for enterprises."
+  },
+  {
+    "question": "Do you provide 24/7 support?",
+    "answer": "Yes, our Enterprise plan includes 24/7 priority support via chat, email, and phone."
+  },
+  {
+    "question": "Is my data encrypted?",
+    "answer": "Yes, all data is encrypted in transit using TLS 1.2+ and at rest with AES-256 encryption."
+  },
+  {
+    "question": "Do you offer uptime guarantees?",
+    "answer": "Yes, we provide a 99.9% uptime SLA for all customers on Growth and Enterprise plans."
+  },
+  {
+    "question": "Can I export my data?",
+    "answer": "Yes, you can export all your data in CSV or JSON format at any time from your account settings."
+  },
+  {
+    "question": "Does your system integrate with Salesforce?",
+    "answer": "Yes, we have a pre-built Salesforce integration to sync leads, contacts, and opportunities."
+  },
+  {
+    "question": "Do you support GDPR compliance?",
+    "answer": "Yes, our platform is fully GDPR compliant and provides tools for data portability and user consent management."
+  },
+  {
+    "question": "What’s included in the Enterprise plan?",
+    "answer": "Enterprise includes unlimited API calls, custom SLAs, advanced security controls, and a dedicated account manager."
+  },
+  {
+    "question": "Can I host the solution on-premise?",
+    "answer": "Yes, on-premise deployment is available for Enterprise customers upon request."
+  },
+  {
+    "question": "Do you have an API sandbox environment?",
+    "answer": "Yes, we provide a developer sandbox for testing APIs without impacting production data."
+  },
+  {
+    "question": "Is onboarding assistance available?",
+    "answer": "Yes, all Growth and Enterprise customers get guided onboarding sessions with our solutions team."
+  },
+  {
+    "question": "Do you support multi-language interfaces?",
+    "answer": "Yes, the platform supports English, Spanish, French, German, and Hindi, with more languages coming soon."
+  },
+  {
+    "question": "Do you support custom branding?",
+    "answer": "Yes, you can customize the platform with your company logo, colors, and domain."
+  },
+  {
+    "question": "Does the platform offer audit logs?",
+    "answer": "Yes, detailed audit logs are available to track all user actions for compliance and security."
+  },
+  {
+    "question": "Can I set up usage alerts?",
+    "answer": "Yes, you can configure email or Slack alerts when API or user activity reaches predefined thresholds."
+  },
+  {
+    "question": "Do you provide a mobile app?",
+    "answer": "Yes, our iOS and Android apps provide full access to platform features on the go."
+  },
+  {
+    "question": "What’s the maximum number of users supported?",
+    "answer": "Our Enterprise plan supports unlimited users with role-based access control."
+  },
+  {
+    "question": "Do you support HIPAA compliance?",
+    "answer": "Yes, HIPAA-compliant deployments are available for healthcare customers on Enterprise plans."
+  },
+  {
+    "question": "Is training included?",
+    "answer": "Yes, Growth and Enterprise customers receive personalized training sessions and video tutorials."
+  },
+  {
+    "question": "Do you support webhooks?",
+    "answer": "Yes, you can configure custom webhooks for real-time event notifications."
+  },
+  {
+    "question": "Can I upgrade or downgrade plans anytime?",
+    "answer": "Yes, you can switch plans anytime, and billing is prorated automatically."
+  },
+  {
+    "question": "Is there a discount for annual billing?",
+    "answer": "Yes, annual billing comes with a 20% discount compared to monthly pricing."
+  },
+  {
+    "question": "Do you offer a nonprofit discount?",
+    "answer": "Yes, verified nonprofits receive a 30% discount on all plans."
+  },
+  {
+    "question": "Can I restrict access by IP address?",
+    "answer": "Yes, IP allowlists can be configured for enhanced security."
+  },
+  {
+    "question": "Does the system support API keys with scopes?",
+    "answer": "Yes, you can generate scoped API keys with specific permissions for different teams."
+  },
+  {
+    "question": "What is the backup policy?",
+    "answer": "We perform automatic daily backups and retain them for 30 days. Enterprise customers can configure custom retention policies."
+  },
+  {
+    "question": "Do you support multi-tenant deployments?",
+    "answer": "Yes, we support both single-tenant and multi-tenant architectures depending on your needs."
+  },
+  {
+    "question": "Is there an uptime dashboard?",
+    "answer": "Yes, we provide a public status page and uptime dashboard with historical performance data."
+  },
+  {
+    "question": "Can I import users from Active Directory?",
+    "answer": "Yes, we support directory sync with Active Directory, Okta, and Azure AD."
+  },
+  {
+    "question": "Do you provide REST and GraphQL APIs?",
+    "answer": "Yes, both REST and GraphQL APIs are available for developers."
+  },
+  {
+    "question": "What reporting features are included?",
+    "answer": "You can access real-time dashboards, scheduled reports, and exportable analytics."
+  },
+  {
+    "question": "Do you have customer references or case studies?",
+    "answer": "Yes, we provide case studies across industries like fintech, healthcare, and e-commerce. References are available on request."
+  }  
+]
