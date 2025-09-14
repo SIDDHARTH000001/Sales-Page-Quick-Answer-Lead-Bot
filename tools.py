@@ -28,11 +28,11 @@ def get_customer_support() -> str:
         support hours, so that users can easily reach out for assistance.
     """
     support_info = (
-        "📞 FlipKraft Customer Support\n"
+        "📞 FinKraft Customer Support\n"
         "Email: support@flipkraft.com\n"
         "Phone: +91-8000-123-456\n"
         "Support Hours: Mon–Sat, 10 AM – 8 PM IST\n"
-        "Knowledge Base: https://flipkraft.com/help\n"
+        "Knowledge Base: https://finkraft.com/help\n"
         "Live Chat: Available on the website"
     )
     return support_info

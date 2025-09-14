@@ -18,10 +18,10 @@ except ImportError as e:
 # Lead Generation Bot Configuration
 BOT_CONFIG = {
     "engagement_thresholds": {
-        "lead_capture_score": 120,  # Score threshold to trigger lead capture
-        "high_intent_score": 80,   # Score for showing interest nudges
+        "lead_capture_score": 80,  # Score threshold to trigger lead capture
+        "high_intent_score": 50,   # Score for showing interest nudges
         "scroll_threshold": 40,    # Percentage scrolled
-        "time_threshold": 180,      # Seconds on page
+        "time_threshold": 45,      # Seconds on page
         "question_threshold": 4,   # Number of questions asked
         "page_variety_threshold": 3 # Different pages visited
     },
@@ -59,6 +59,158 @@ BOT_CONFIG = {
         "/features": 10,
         "/home": 5,
         "/support": 5
+    },
+    "page_content": {
+        "/home": {
+            "title": "🏠 Welcome to FlipKraft",
+            "content": """
+**Transform Your Business with Smart Automation**
+
+FlipKraft is your all-in-one platform for business automation and API integration. 
+Whether you're a startup or enterprise, we help streamline your workflows and boost productivity.
+
+🚀 **Key Benefits:**
+• Reduce manual work by 80%
+• Scale operations seamlessly  
+• Enterprise-grade security
+• 500+ pre-built integrations
+• 24/7 expert support
+
+*Ready to see FlipKraft in action? Explore our features or check out our pricing plans!*
+"""
+        },
+        "/pricing": {
+            "title": "💰 Flexible Pricing Plans",
+            "content": """
+**Choose the perfect plan for your business needs**
+
+🚀 **Basic Plan - $99/month**
+• Up to 1M API calls
+• Standard integrations
+• Email support
+• 14-day free trial
+
+⭐ **Pro Plan - $199/month**
+• Up to 5M API calls
+• Advanced integrations
+• Priority support
+• Custom workflows
+
+🏢 **Enterprise - Custom Pricing**
+• Unlimited API calls
+• White-label solutions
+• Dedicated account manager
+• SLA guarantees
+
+*All plans include free setup and migration assistance!*
+"""
+        },
+        "/security": {
+            "title": "🔒 Enterprise-Grade Security",
+            "content": """
+**Your data security is our top priority**
+
+🛡️ **Compliance & Certifications:**
+• SOC 2 Type II certified
+• GDPR compliant
+• ISO 27001 certified
+• HIPAA ready
+
+🔐 **Security Features:**
+• End-to-end encryption
+• Multi-factor authentication
+• Role-based access control
+• Audit logs and monitoring
+• Data residency options
+
+*Need a security assessment? Our compliance team is ready to help!*
+"""
+        },
+        "/integrations": {
+            "title": "🔗 Powerful Integrations",
+            "content": """
+**Connect with 500+ apps and services**
+
+⚡ **Popular Integrations:**
+• Salesforce, HubSpot, Pipedrive
+• Slack, Microsoft Teams, Discord
+• AWS, Google Cloud, Azure
+• Stripe, PayPal, QuickBooks
+• Zapier, Make, n8n
+
+🛠️ **Integration Features:**
+• No-code integration builder
+• Real-time data sync
+• Custom API endpoints
+• Webhook support
+• Bulk data operations
+
+*Can't find your app? We build custom integrations in 48 hours!*
+"""
+        },
+        "/api-docs": {
+            "title": "📚 Developer Resources",
+            "content": """
+**Comprehensive API documentation and tools**
+
+🔧 **Developer Tools:**
+• Interactive API explorer
+• Code samples in 8 languages
+• Postman collections
+• SDKs and libraries
+• Sandbox environment
+
+📖 **Documentation:**
+• Getting started guides
+• API reference
+• Webhooks documentation
+• Rate limiting guide
+• Best practices
+
+*Need help? Join our developer community with 10,000+ active members!*
+"""
+        },
+        "/features": {
+            "title": "⚙️ Platform Features",
+            "content": """
+**Everything you need to automate your business**
+
+🎯 **Core Features:**
+• Visual workflow builder
+• Real-time data processing
+• Advanced analytics dashboard
+• Custom field mapping
+• Conditional logic
+
+📊 **Analytics & Monitoring:**
+• Performance metrics
+• Error tracking
+• Usage analytics
+• Custom reports
+• Alerts and notifications
+
+*Discover how our features can transform your operations!*
+"""
+        },
+        "/support": {
+            "title": "📞 FlipKraft Customer Support",
+            "content": """
+**We're here to help you succeed**
+
+**Contact Information:**
+📧 Email: support@flipkraft.com
+📱 Phone: +91-8000-123-456
+⏰ Support Hours: Mon–Sat, 10 AM – 8 PM IST
+
+**Self-Service Resources:**
+🔍 Knowledge Base: https://flipkraft.com/help
+💬 Live Chat: Available on the website
+🎥 Video Tutorials: Step-by-step guides
+📝 Community Forum: Connect with other users
+
+*Average response time: < 30 minutes during business hours*
+"""
+        }
     }
 }
 
@@ -375,13 +527,13 @@ class VisitorSession:
         if score >= thresholds['lead_capture_score']:
             return True
         
-        
+        # Secondary triggers for high-intent behavior
         scroll_trigger = self.session['scroll_percentage'] >= thresholds['scroll_threshold']
         time_trigger = (datetime.now() - self.session['start_time']).seconds >= thresholds['time_threshold']
         question_trigger = self.session['questions_asked'] >= thresholds['question_threshold']
         page_trigger = len(self.session['pages_visited']) >= thresholds['page_variety_threshold']
         
-        
+        # Need at least 2 secondary triggers + minimum score
         secondary_triggers = sum([scroll_trigger, time_trigger, question_trigger, page_trigger])
         return secondary_triggers >= 2 and score >= thresholds['high_intent_score']
     
@@ -396,6 +548,33 @@ class VisitorSession:
         
         score = self.session['engagement_score']
         return score >= BOT_CONFIG['engagement_thresholds']['high_intent_score']
+
+def show_page_info(visitor):
+    """Display page-specific content based on current page"""
+    current_page = visitor.session['current_page']
+    page_info = BOT_CONFIG['page_content'].get(current_page)
+    
+    if page_info:
+        # Create an attractive info box
+        st.markdown(f"""
+        <div style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        ">
+            <h3 style="margin: 0 0 15px 0; color: white;">{page_info['title']}</h3>
+            <div style="
+                background: rgba(255,255,255,0.1);
+                padding: 15px;
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                line-height: 1.6;
+            ">
+                {page_info['content'].replace('•', '<br>•').replace('*', '<em>').replace('*', '</em>')}
+        """, unsafe_allow_html=True)
 
 def init_app():
     """Initialize the application"""
@@ -428,7 +607,7 @@ def simulate_visitor_behavior():
     with col2:
         # Show fresh lead count
         fresh_count = lead_capture.get_fresh_lead_count()
-        st.metric("Live Count", fresh_count)
+        st.metric("Lead Count", fresh_count)
     
     # Current engagement display
     st.sidebar.markdown("### 📊 Current Engagement")
@@ -439,7 +618,14 @@ def simulate_visitor_behavior():
     st.sidebar.metric("Engagement Score", score)
     st.sidebar.metric("Qualification", f"{color_map.get(qualification, '⚪')} {qualification.title()}")
     
-
+    # DEBUG INFO
+    # st.sidebar.markdown("### 🔍 Debug Info")
+    # st.sidebar.write(f"Should trigger: {visitor.should_trigger_lead_capture()}")
+    # st.sidebar.write(f"Show form: {visitor.session['show_lead_form']}")
+    # st.sidebar.write(f"Form should show: {visitor.session['form_should_show']}")
+    # st.sidebar.write(f"Lead captured: {visitor.session['lead_captured']}")
+    # st.sidebar.write(f"Nudge declined: {visitor.session['nudge_declined']}")
+    
     # Page simulation
     st.sidebar.markdown("### 📄 Page Navigation")
     pages = list(BOT_CONFIG['page_contexts'].keys())
@@ -697,6 +883,9 @@ def display_chat_interface():
         show_lead_capture_form()
         return
     
+    # Show page-specific information above chat
+    show_page_info(visitor)
+    
     st.markdown("### 💬 Ask About Our Platform")
     st.markdown("*Get instant answers about pricing, security, integrations, and more!*")
     
@@ -839,9 +1028,7 @@ def show_leads_dashboard():
         st.metric("Hot Leads", hot_leads)
     
     with col3:
-        leads_df['qualification_score'] = pd.to_numeric(leads_df['qualification_score'], errors='coerce')
         avg_score = leads_df['qualification_score'].mean()
-
         st.metric("Avg Score", f"{avg_score:.1f}")
     
     with col4:
@@ -908,10 +1095,10 @@ def main():
         else:
             st.info(f"📈 Engaging ({score}/{threshold})")
     
-    # with col3:
-    #     # Always get fresh lead count
-    #     total_leads = lead_capture.get_fresh_lead_count()
-    #     st.metric("Leads Captured", total_leads)
+    with col3:
+        # Always get fresh lead count
+        total_leads = lead_capture.get_fresh_lead_count()
+        # st.metric("Leads Captured", total_leads)
     
     # PRIORITY 1: Show lead form immediately if triggered
     if (visitor.session.get('form_should_show', False) or 
@@ -926,8 +1113,8 @@ def main():
         # Still show sidebar for testing
         with st.sidebar:
             simulate_visitor_behavior()
-        # st.rerun()
-        # return  # Don't show the rest of the interface
+        
+        return  # Don't show the rest of the interface
     
     # Main layout
     col1, col2 = st.columns([2, 1])
@@ -945,7 +1132,7 @@ def main():
     with col2:
         # Visitor simulation
         simulate_visitor_behavior()
+        
 
-    
 if __name__ == "__main__":
     main()
