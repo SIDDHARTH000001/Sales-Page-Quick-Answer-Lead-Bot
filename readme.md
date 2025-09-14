@@ -1,4 +1,4 @@
-# SaaS Lead Capture Chatbot 
+# Sales-Page-Quick-Answer-Lead-Bot
 
 ## Team - 26
 ## Project Name - Sales Page Quick-Answer & Lead Bot
@@ -6,7 +6,7 @@
 🎥 [Watch Demo](https://youtube.com/your-demo-video-link)
 
 ## 📌 Overview
-Finkart is an AI-powered lead management and qualification app.  
+An AI-powered lead management and qualification app.  
 It captures prospect information such as **name, email, company, and company size** and enriches it with behavioral signals:  
 
 - **Pages visited**  
